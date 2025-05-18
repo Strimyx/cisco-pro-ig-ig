@@ -19,7 +19,7 @@ Router(config-line)#enable secret L
 	
 Router(config-line)#enable secret Admin
 Router(config)#hostname Leo
-Leo(config)#ip domain-name irc.com
+Leo(config)#ip domain-name irc,com
 
 -------------------------------------------------------------------------------
 
@@ -116,7 +116,7 @@ Router(config-line)# password Irc2025   // Définir un mot de passe Telnet
 Router(config-line)# login              // Activer la demande de mot de passe
 Router(config)# enable secret Admin     // Mot de passe pour enable
 Router(config)# hostname Central        // Renommer le routeur
-Router(config)# ip domain-name irc.com  // Définir un domaine
+Router(config)# ip domain-name irc,com  // Définir un domaine
 ---------------------------------------------------------------------------
 4. 🖥️ Connexion Telnet depuis le PC9
 Dans le terminal du PC9, entrer :
