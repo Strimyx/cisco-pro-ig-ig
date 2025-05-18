@@ -6,7 +6,7 @@ Router>en
 
 Router#conf t
 
-Router(config)#int g2/0
+Router(config)#int g0/0
 
 Router(config-if)#no shutdown
 
@@ -58,7 +58,7 @@ Name(config-if)#no shutdown
 
 Name(config-if)#exit
 
-Name(config)#int g0/0
+Name(config)#int g2/0
 
 Name(config-if)#no shutdown
 
@@ -72,13 +72,13 @@ Name#show cdp neighbors detail
 
 name#conf t
 
-name(config)#int g1/0 
+name(config)#int g2/0 
 
 name(config-if)#ip address 200.0.0.13 255.255.255.252
 
 name(config-if)#exit
 
-name(config)#int g0/0
+name(config)#int g1/0
 
 name(config-if)#ip address 200.0.0.10 255.255.255.252
 
