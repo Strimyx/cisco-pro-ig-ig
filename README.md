@@ -3,22 +3,32 @@ strimyx!!
 LAPTOP
 
 Router>en
+
 Router#conf t
+
 Router(config)#int g2/0
+
 Router(config-if)#no shutdown
 
 
+
 Router(config-if)#ip address 192.170.1.1 255.255.255.192
+
 Router(config-if)#line vty 0 4
+
 Router(config-line)#password L
+
 Router(config-line)#login
+
 Router(config-line)#enable secret L
           
 	
 Router(config-line)#enable secret L
 	
 Router(config-line)#enable secret Admin
+
 Router(config)#hostname Leo
+
 Leo(config)#ip domain-name irc,com
 
 -------------------------------------------------------------------------------
@@ -27,50 +37,85 @@ PC-9
 
 
 C:\>telnet 192.170.1.1 
+
 Trying 192.170.1.1 ...Open
 
 
 User Access Verification
 
 Password: 
+
 Leo>en
+
 Password: 
+
 Leo#conf t
+
 Leo(config)#int g1/0
+
 Leo(config-if)#no shutdown
 
+
 Leo(config-if)#exit
+
 Leo(config)#int g0/0
+
 Leo(config-if)#no shutdown
+
 
 
 Leo(config-if)#exit
 	
 Leo(config)#exit
+
 Leo#show cdp neighbors detail
+
 Leo#conf t
+
 Leo(config)#int g1/0 
+
 Leo(config-if)#ip address 200.0.0.13 255.255.255.252
+
 Leo(config-if)#exit
+
 Leo(config)#int g0/0
+
 Leo(config-if)#ip address 200.0.0.10 255.255.255.252
+
 Leo(config-if)#exit
+
 Leo(config)#router rip
+
 Leo(config-router)#v 2
+
 Leo(config-router)#no auto-summary
+
 Leo(config-router)#net 200.0.0.8
+
 Leo(config-router)#net 200.0.0.12
+
 Leo(config-router)#net 192.170.1.0
+
 Leo(config-router)#exit
+
 Leo(config)#router ospf 1
+
 Leo(config-router)#net 200.0.0.8 0.0.0.3 area 2
+
 Leo(config-router)#net 200.0.0.12 0.0.0.3 area 2
+
 Leo(config-router)#redistribute rip subnets
+
 Leo(config-router)#exit
+
 Leo(config)#router rip
+
 Leo(config-router)#v 2
+
 Leo(config-router)#redistribute ospf 1 metric 5
+
 Leo(config-router)#exit
+
 
 -------------------------------------------------------------------------
 
