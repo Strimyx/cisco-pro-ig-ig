@@ -22,9 +22,9 @@ Router(config-line)#login
 	
 Router(config-line)#enable secret ADMIN
 
-Router(config)#hostname Name
+Router(config)#hostname CENTRAL
 
-name(config)#ip domain-name IRC.COM
+CENTRAL(config)#ip domain-name IRC.COM
 
 -------------------------------------------------------------------------------
 
@@ -35,78 +35,78 @@ C:\>telnet 192.170.1.1
 
 Password: EAC2
 
-name>en
+CENTRAL>en
 
 Password: ADMIN
 
-Name#conf t
+CENTRAL#conf t
 
-Name(config)#int g1/0
+CENTRAL(config)#int g1/0
 
-Name(config-if)#no shutdown
-
-
-Name(config-if)#exit
-
-Name(config)#int g2/0
-
-Name(config-if)#no shutdown
+CENTRAL(config-if)#no shutdown
 
 
+CENTRAL(config-if)#exit
 
-Name(config-if)#exit
+CENTRAL(config)#int g2/0
+
+CENTRAL(config-if)#no shutdown
+
+
+
+CENTRAL(config-if)#exit
 	
-Name(config)#exit
+CENTRAL(config)#exit
 
-Name#show cdp neighbors detail
+CENTRAL#show cdp neighbors detail
 
-name#conf t
+CENTRAL#conf t
 
-name(config)#int g1/0 
+CENTRAL(config)#int g1/0 
 
-name(config-if)#ip address 200.200.200.130 255.255.255.252
+CENTRAL(config-if)#ip address 200.200.200.130 255.255.255.252
 
-name(config-if)#exit
+CENTRAL(config-if)#exit
 
-name(config)#int g2/0
+CENTRAL(config)#int g2/0
 
-name(config-if)#ip address 200.200.200.133 255.255.255.252
+CENTRAL(config-if)#ip address 200.200.200.133 255.255.255.252
 
-name(config-if)#exit
+CENTRAL(config-if)#exit
 
-name(config)#router rip
+CENTRAL(config)#router rip
 
-name(config-router)#v 2
+CENTRAL(config-router)#v 2
 
-name(config-router)#no auto-summary
+CENTRAL(config-router)#no auto-summary
 
-name(config-router)#net 200.200.200.128
+CENTRAL(config-router)#net 200.200.200.128
 
-name(config-router)#net 200.200.200.132
+CENTRAL(config-router)#net 200.200.200.132
 
-name(config-router)#net 192.170.1.0
+CENTRAL(config-router)#net 192.170.1.0
 
-name(config-router)#exit
+CENTRAL(config-router)#exit
 
-name(config)#router ospf 1
+CENTRAL(config)#router ospf 1
 
-name(config-router)#net 200.200.200.128 0.0.0.3 area 2
+CENTRAL(config-router)#net 200.200.200.128 0.0.0.3 area 2
 
-name(config-router)#net 200.200.200.132 0.0.0.3 area 2
+CENTRAL(config-router)#net 200.200.200.132 0.0.0.3 area 2
 
-name(config-router)#redistribute rip subnets
+CENTRAL(config-router)#redistribute rip subnets
 
-name(config-router)#exit
+CENTRAL(config-router)#exit
 
-name(config)#router rip
+CENTRAL(config)#router rip
 
-name(config-router)#v 2
+CENTRAL(config-router)#v 2
 
-name(config-router)#no auto-summary
+CENTRAL(config-router)#no auto-summary
 
-name(config-router)#redistribute ospf 1 metric 5
+CENTRAL(config-router)#redistribute ospf 1 metric 5
 
-name(config-router)#exit
+CENTRAL(config-router)#exit
 
 
 -------------------------------------------------------------------------
@@ -176,7 +176,7 @@ Router(config-line)# login              // Activer la demande de mot de passe
 
 Router(config)# enable secret Admin     // Mot de passe pour enable
 
-Router(config)# hostname Central        // Renommer le routeur
+Router(config)# hostCENTRAL Central        // Renommer le routeur
 
 Router(config)# ip domain-name Test,com  // Définir un domaine
 
