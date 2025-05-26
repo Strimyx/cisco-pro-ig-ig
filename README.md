@@ -102,6 +102,8 @@ name(config)#router rip
 
 name(config-router)#v 2
 
+name(config-router)#no auto-summary
+
 name(config-router)#redistribute ospf 1 metric 5
 
 name(config-router)#exit
