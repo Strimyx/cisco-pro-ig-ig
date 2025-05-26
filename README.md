@@ -19,11 +19,6 @@ Router(config-if)#line vty 0 4
 Router(config-line)#password L
 
 Router(config-line)#login
-
-Router(config-line)#enable secret L
-          
-	
-Router(config-line)#enable secret L
 	
 Router(config-line)#enable secret Admin
 
@@ -38,16 +33,11 @@ PC-9
 
 C:\>telnet 192.170.1.1 
 
-Trying 192.170.1.1 ...Open
-
-
-User Access Verification
-
-Password: 
+Password: EAC2
 
 name>en
 
-Password: 
+Password: ADMIN
 
 Name#conf t
 
@@ -72,15 +62,15 @@ Name#show cdp neighbors detail
 
 name#conf t
 
-name(config)#int g2/0 
+name(config)#int g1/0 
 
-name(config-if)#ip address 200.0.0.13 255.255.255.252
+name(config-if)#ip address 200.200.200.130 255.255.255.252
 
 name(config-if)#exit
 
-name(config)#int g1/0
+name(config)#int g2/0
 
-name(config-if)#ip address 200.0.0.10 255.255.255.252
+name(config-if)#ip address 200.200.200.133 255.255.255.252
 
 name(config-if)#exit
 
@@ -90,9 +80,9 @@ name(config-router)#v 2
 
 name(config-router)#no auto-summary
 
-name(config-router)#net 200.0.0.8
+name(config-router)#net 200.200.200.128
 
-name(config-router)#net 200.0.0.12
+name(config-router)#net 200.200.200.132
 
 name(config-router)#net 192.170.1.0
 
@@ -100,9 +90,9 @@ name(config-router)#exit
 
 name(config)#router ospf 1
 
-name(config-router)#net 200.0.0.8 0.0.0.3 area 2
+name(config-router)#net 200.200.200.128 0.0.0.3 area 2
 
-name(config-router)#net 200.0.0.12 0.0.0.3 area 2
+name(config-router)#net 200.200.200.132 0.0.0.3 area 2
 
 name(config-router)#redistribute rip subnets
 
