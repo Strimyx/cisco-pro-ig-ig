@@ -16,15 +16,15 @@ Router(config-if)#ip address 192.170.1.1 255.255.255.192
 
 Router(config-if)#line vty 0 4
 
-Router(config-line)#password L
+Router(config-line)#password EAC2
 
 Router(config-line)#login
 	
-Router(config-line)#enable secret Admin
+Router(config-line)#enable secret ADMIN
 
 Router(config)#hostname Name
 
-name(config)#ip domain-name test,com
+name(config)#ip domain-name IRC.COM
 
 -------------------------------------------------------------------------------
 
