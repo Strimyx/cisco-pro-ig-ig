@@ -58,7 +58,7 @@ CENTRAL(config-if)#exit
 	
 CENTRAL(config)#exit
 
-CENTRAL#show cdp neighbors detail
+CENTRAL#do show cdp neighbors detail
 
 CENTRAL#conf t
 
